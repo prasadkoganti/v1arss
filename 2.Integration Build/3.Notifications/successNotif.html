@@ -1,0 +1,57 @@
+dvm:lookupValue('oramds:/apps/ICS/DVM/XXGSTT_AR_Invoice_Lookup.dvm','PropertyName','noreplyFromEmail','PropertyValue','')
+
+dvm:lookupValue('oramds:/apps/ICS/DVM/XXGSTT_AR_Invoice_Lookup.dvm','PropertyName','EmailTo','PropertyValue','')
+
+concat(concat( "Invoice Reference - ", /nssrcmpr:execute/nssrcdfl:request-wrapper/nssrcdfl:InvoiceReference)," imported successfully in ERP Cloud ")
+
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+   font-size:14px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+p{
+  font-family: arial, sans-serif;font-size:12px;
+}
+
+span{
+  font-family: arial, sans-serif;font-size:12px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+   font-size:12px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+</style>
+</head>
+<body>
+
+<span>Dear User,</span>
+<br>
+<br>
+<span><b>Invoice Reference:</b> {invoiceRef} Imported successfully in ERP Cloud.</span>
+<br>
+<br>
+<span>Please find details below:</span>
+<br><br>
+
+<span><b>Process Name:</b> Import Auto Invoice <br><br></span>
+<span><b>Instance Id:</b> {instanceID}<br><br></span>
+<span><b>Ess Job Id:</b> {EssJobId}<br><br></span>
+<span><b>Ess Job Status:</b> {EssJobStatus}<br><br></span>
+
+<br><br>
+<span>P.S. This is an auto-generated notification from Oracle Integration Cloud Service Global Fault Handler. Do not reply to this email.</span>
+</body>
+</html>

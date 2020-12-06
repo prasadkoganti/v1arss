@@ -1,0 +1,55 @@
+<!--
+ Copyright (c) 2014, 2020, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-flex">
+  <h1 class="oj-flex-item oj-sm-12 oj-md-12">Self Service Invoicing - Summary</h1>
+</div>
+<div class="oj-flex">
+  <hr class="oj-flex-item oj-sm-12 oj-md-12">
+</div>
+<div class="oj-flex">
+  <oj-toolbar id="oj-toolbar-for-oj-table-1084591017-1" chroming="full" class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-button on-oj-action="[[$page.listeners.createInvoiceHeaderButtonClicked]]">Create Invoice</oj-button>
+  </oj-toolbar>
+</div>
+<br>
+<br>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-1"></div>
+  <oj-label for="oj-input-text-1084591017-1" class="oj-flex-item oj-sm-12 oj-label-inline oj-md-1">Search</oj-label>
+  <oj-input-text id="oj-input-text-1084591017-1" class="oj-flex-item oj-sm-12 oj-md-4 oj-form-control-full-width" placeholder="Invoice Ref or Customer or Requestor" value="{{ $page.variables.searchVar }}"></oj-input-text>
+</div>
+<br>
+<br>
+<div class="oj-flex">
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12" data="[[$page.variables.invoiceHeaderListSDP]]" 
+  selection-mode.row="multiple" on-first-selected-row-changed="[[$listeners.ojTableFirstSelectedRow]]" 
+  display="grid" scroll-policy-options.max-count="10000" scroll-policy-options.fetch-size="100" 
+  columns='[{"headerText":"Invoice Reference","field":"invoiceReference"},{"headerText":"Name","field":"transactionTypeRefObjec","sortProperty":"transactionTypeRefObjec.name","template":"nameCellTemplate2"},{"headerText":"Status","field":"status"},{"headerText":"Transaction Total","field":"transactionTotal","template":"Transaction Total1"},{"headerText":"Name","field":"customerNameRefObject","sortProperty":"customerNameRefObject.name","template":"nameCellTemplate4"},{"headerText":"Revenue Dept Approver","field":"revenueDeptApprover"},{"headerText":"Requestor Name","field":"requestorName"},{"headerText":"Current Approver","field":"currentApprover"},{"headerText":"Last Update","field":"lastUpdateDate","template":"Last Update"},{"headerText":"Update","field":"","template":"cellTemplate"},{"headerText":"Delete","field":"","template":"cellTemplate1"},{"headerText":"Duplicate","field":"","template":"cellTemplate2"}]'>
+    <template slot="nameCellTemplate2">
+      <oj-bind-text value="[[ $current.data.items[0] ? $current.data.items[0].name : undefined ]]"></oj-bind-text>
+    </template>
+    <template slot="nameCellTemplate4">
+      <oj-bind-text value="[[ $current.data.items[0] ? $current.data.items[0].name : undefined ]]"></oj-bind-text>
+    </template>
+    <template slot="Last Update">
+      <oj-input-date value='[[typeof $current.data === "string" ? $current.data : null]]' readonly="true" converter='{"type": "datetime", "options": {"formatType":"date","dateFormat":"medium"}}'></oj-input-date>
+    </template>
+    <template slot="Transaction Total">
+      <oj-input-number value='[[typeof $current.data === "number" ? $current.data : null]]' readonly="true" style="text-align: right;"></oj-input-number>
+    </template>
+    <template slot="cellTemplate">
+      <oj-button disabled="[[ $page.variables.oj_table_1084591017_1SelectedId === '' ]]" on-oj-action="[[$page.listeners.editInvoiceHeaderButtonClicked]]">Edit</oj-button>
+    </template>
+    <template slot="cellTemplate1">
+      <oj-button disabled="[[ $page.variables.oj_table_1084591017_1SelectedId === '' || $page.variables.selectedInvStatus === 'SUBMITTED' || $page.variables.selectedInvStatus === 'COMPLETE' ]]" on-oj-action="[[$page.listeners.deleteInvoiceHeaderButtonClicked]]">Delete</oj-button>
+    </template>
+    <template slot="cellTemplate2">
+     <oj-button disabled="[[ $page.variables.oj_table_1084591017_1SelectedId === '' ]]" on-oj-action="[[$page.listeners.editInvoiceHeaderButtonClicked]]">Duplicate</oj-button>
+    </template>
+    <template slot="Transaction Total1">
+      <oj-input-number value='[[typeof $current.data === "number" ? $current.data : null]]' readonly="true" style="text-align: right;" converter='{"options":{"decimalFormat":"standard"},"type":"number"}'></oj-input-number>
+    </template>
+  </oj-table>
+</div>

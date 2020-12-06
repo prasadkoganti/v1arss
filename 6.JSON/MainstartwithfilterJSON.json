@@ -1,0 +1,515 @@
+{
+  "pageModelVersion": "18.4.1",
+  "title": "",
+  "description": "",
+  "variables": {
+    "oj_table_1084591017_1SelectedId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "selectedInvStatus": {
+      "type": "string"
+    },
+    "selectedInvId": {
+      "type": "string"
+    },
+    "searchReferenceVar": {
+      "type": "string"
+    },
+    "searchStatusVar": {
+      "type": "string"
+    },
+    "referenceCond": {
+      "type": "CriteriaType",
+      "defaultValue": {
+        "attribute": "invoiceReference",
+        "op": "$co",
+        "value": "{{null}}"
+      }
+    },
+    "statusCond": {
+      "type": "CriteriaType",
+      "defaultValue": {
+        "attribute": "status",
+        "op": "$co",
+        "value": "{{null}}"
+      }
+    },
+    "invoiceHeaderListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_InvoiceHeader",
+        "idAttribute": "id",
+        "itemsPath": "items",
+        "responseType": "page:getallInvoiceHeaderResponse",
+        "filterCriterion": {
+          "op": "$eq",
+          "attribute": "requestorName",
+          "value": "{{ $application.user.email }}"
+        }
+      }
+    },
+    "customerCond": {
+      "type": "CriteriaType",
+      "defaultValue": {
+        "attribute": "customerName",
+        "op": "$co",
+        "value": "{{null}}"
+      }
+    },
+    "requestorCond": {
+      "type": "CriteriaType",
+      "defaultValue": {
+        "attribute": "requestorName",
+        "op": "$co",
+        "value": "{{null}}"
+      }
+    },
+    "searchCustomerVar": {
+      "type": "string"
+    }
+  },
+  "types": {
+    "getallInvoiceHeaderResponse3": {
+      "items": [
+        {
+          "currentApprover": "string",
+          "customerNameRefObject": {
+            "items": [
+              {
+                "name": "string"
+              }
+            ]
+          },
+          "id": "number",
+          "invoiceReference": "string",
+          "lastUpdateDate": "string",
+          "requestorName": "string",
+          "revenueDeptApprover": "string",
+          "status": "string",
+          "transactionTotal": "number",
+          "transactionTypeRefObjec": {
+            "items": [
+              {
+                "name": "string"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "@decorators.getallInvoiceHeaderResponse3": {
+      "endpoint": "getall_InvoiceHeader",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "CriteriaType": {
+      "attribute": "string",
+      "op": "string",
+      "value": "string"
+    },
+    "getallInvoiceHeaderResponse": {
+      "items": [
+        {
+          "currentApprover": "string",
+          "customerName": "string",
+          "id": "number",
+          "invoiceReference": "string",
+          "lastUpdateDate": "string",
+          "requestorName": "string",
+          "revenueDeptApprover": "string",
+          "status": "string",
+          "transactionTotal": "number",
+          "transactionType": "string"
+        }
+      ]
+    },
+    "@decorators.getallInvoiceHeaderResponse": {
+      "endpoint": "getall_InvoiceHeader",
+      "service": "businessObjects",
+      "path": "response"
+    }
+  },
+  "chains": {
+    "navigateToCreateInvoiceHeaderChain": {
+      "root": "navigateToCreate",
+      "actions": {
+        "navigateToCreate": {
+          "module": "vb/action/builtin/navigateToPageAction",
+          "parameters": {
+            "history": "push",
+            "page": "main-create-invoice-header",
+            "params": {}
+          },
+          "outcomes": {
+            "success": ""
+          }
+        }
+      }
+    },
+    "oj_table_1084591017_1ChangeSelectionChain": {
+      "variables": {
+        "invoiceHeaderId": {
+          "type": "string",
+          "input": "fromCaller",
+          "defaultValue": ""
+        }
+      },
+      "root": "assignVariable",
+      "actions": {
+        "assignVariable": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.oj_table_1084591017_1SelectedId": {
+              "source": "[[ $chain.variables.invoiceHeaderId ]]"
+            }
+          },
+          "outcomes": {
+            "success": "if1"
+          }
+        },
+        "callRestEndpoint1": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/get_InvoiceHeader",
+            "uriParams": {
+              "InvoiceHeader_Id": "{{ $page.variables.oj_table_1084591017_1SelectedId }}"
+            }
+          },
+          "outcomes": {
+            "failure": "fireNotification1",
+            "success": "assignVariables1"
+          }
+        },
+        "fireNotification1": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $chain.results.callRestEndpoint1.message.summary ]]",
+            "type": "error",
+            "displayMode": "persist"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.selectedInvId": {
+              "source": "{{ $chain.results.callRestEndpoint1.body.id }}"
+            },
+            "$page.variables.selectedInvStatus": {
+              "source": "{{ $chain.results.callRestEndpoint1.body.status }}"
+            }
+          }
+        },
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $page.variables.oj_table_1084591017_1SelectedId !== '']]"
+          },
+          "outcomes": {
+            "true": "callRestEndpoint1"
+          }
+        }
+      }
+    },
+    "deleteInvoiceHeaderChain": {
+      "root": "deleteInvoiceHeader",
+      "variables": {
+        "invoiceHeaderId": {
+          "type": "string",
+          "input": "fromCaller",
+          "required": true
+        }
+      },
+      "actions": {
+        "deleteInvoiceHeader": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/delete_InvoiceHeader",
+            "uriParams": {
+              "InvoiceHeader_Id": "[[ $chain.variables.invoiceHeaderId ]]"
+            }
+          },
+          "outcomes": {
+            "success": "resetSelection",
+            "failure": "fireErrorNotification"
+          }
+        },
+        "resetSelection": {
+          "module": "vb/action/builtin/resetVariablesAction",
+          "parameters": {
+            "variables": [
+              "[[ '$page.variables.oj_table_1084591017_1SelectedId' ]]"
+            ]
+          },
+          "outcomes": {
+            "success": "refreshDataProvider"
+          },
+          "description": "Resets selection variable",
+          "label": "Reset selection"
+        },
+        "refreshDataProvider": {
+          "module": "vb/action/builtin/fireDataProviderEventAction",
+          "outcomes": {
+            "success": "fireSuccessNotification"
+          },
+          "parameters": {
+            "refresh": null,
+            "target": "[[ $page.variables.invoiceHeaderListSDP ]]"
+          }
+        },
+        "fireSuccessNotification": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "summary": "InvoiceHeader deleted",
+            "message": "[[ 'InvoiceHeader [' + $chain.variables.invoiceHeaderId + '] successfully deleted' ]]",
+            "type": "confirmation",
+            "displayMode": "transient"
+          },
+          "outcomes": {}
+        },
+        "fireErrorNotification": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "summary": "Delete failed",
+            "message": "[[ 'Could not delete data: status ' + $chain.results.deleteInvoiceHeader.payload.status ]]",
+            "type": "error",
+            "displayMode": "persist"
+          },
+          "outcomes": {}
+        }
+      }
+    },
+    "navigateToEditInvoiceHeaderChain": {
+      "root": "navigateToEdit",
+      "variables": {
+        "invoiceHeaderId": {
+          "type": "string",
+          "input": "fromCaller",
+          "required": true
+        }
+      },
+      "actions": {
+        "navigateToEdit": {
+          "module": "vb/action/builtin/navigateToPageAction",
+          "parameters": {
+            "history": "push",
+            "page": "main-edit-invoice-header",
+            "params": {
+              "invoiceHeaderId": "[[ $chain.variables.invoiceHeaderId ]]"
+            }
+          },
+          "outcomes": {
+            "success": ""
+          }
+        }
+      }
+    },
+    "DuplicateInvoiceActionChain": {
+      "description": "",
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        },
+        "invoiceHeaderId": {
+          "type": "string",
+          "required": false,
+          "input": "fromCaller"
+        }
+      },
+      "root": "callRestEndpoint1",
+      "actions": {
+        "callRestEndpoint1": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "duplicateinvoice/duplicateinvoice",
+            "uriParams": {
+              "inv_id": "{{ $page.variables.oj_table_1084591017_1SelectedId }}",
+              "requestor": "{{ $application.user.email }}"
+            }
+          },
+          "outcomes": {
+            "failure": "fireNotification1",
+            "success": "callRestEndpoint2"
+          }
+        },
+        "fireNotification1": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $chain.results.callRestEndpoint1.message.summary ]]",
+            "type": "error",
+            "displayMode": "persist"
+          }
+        },
+        "callRestEndpoint2": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "get_new_invoice_id/get_new_invoice_id",
+            "uriParams": {
+              "old_invoice_id": "{{ $page.variables.oj_table_1084591017_1SelectedId }}"
+            }
+          },
+          "outcomes": {
+            "failure": "fireNotification2",
+            "success": "callActionChain1"
+          }
+        },
+        "fireNotification2": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $chain.results.callRestEndpoint2.message.summary ]]",
+            "type": "error",
+            "displayMode": "persist"
+          }
+        },
+        "callActionChain1": {
+          "module": "vb/action/builtin/callChainAction",
+          "parameters": {
+            "id": "navigateToEditInvoiceHeaderChain",
+            "params": {
+              "invoiceHeaderId": "{{ $chain.results.callRestEndpoint2.body.new_invoice_id }}"
+            }
+          }
+        }
+      }
+    },
+    "GoButtonActionChain": {
+      "description": "",
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      },
+      "root": "assignVariables1",
+      "actions": {
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.invoiceHeaderListSDP2": {
+              "source": {
+                "filterCriterion": {
+                  "criteria": [
+                    "{{ $page.variables.referenceCond }}",
+                    "{{ $page.variables.statusCond }}",
+                    "{{ $page.variables.customerCond }}"
+                  ],
+                  "op": "$and"
+                }
+              },
+              "reset": "none",
+              "auto": "always",
+              "mapping": {
+                "$target.filterCriterion": {
+                  "source": "$source.filterCriterion",
+                  "reset": "empty",
+                  "auto": "always"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "eventListeners": {
+    "createInvoiceHeaderButtonClicked": {
+      "chains": [
+        {
+          "chainId": "navigateToCreateInvoiceHeaderChain"
+        }
+      ]
+    },
+    "oj_table_1084591017_1SelectionChanged": {
+      "chains": [
+        {
+          "chainId": "oj_table_1084591017_1ChangeSelectionChain",
+          "parameters": {
+            "invoiceHeaderId": "[[ $event.detail.value.key || '' ]]"
+          }
+        }
+      ]
+    },
+    "deleteInvoiceHeaderButtonClicked": {
+      "chains": [
+        {
+          "chainId": "deleteInvoiceHeaderChain",
+          "parameters": {
+            "invoiceHeaderId": "[[ $page.variables.oj_table_1084591017_1SelectedId ]]"
+          }
+        }
+      ]
+    },
+    "ojTableFirstSelectedRow": {
+      "chains": [
+        {
+          "chainId": "oj_table_1084591017_1ChangeSelectionChain",
+          "parameters": {
+            "invoiceHeaderId": "{{ $event.detail.value.key || '' }}"
+          }
+        }
+      ]
+    },
+    "ojButtonOjAction": {
+      "chains": [
+        {
+          "chainId": "DuplicateInvoiceActionChain",
+          "parameters": {
+            "detail": "{{ $event.detail }}",
+            "invoiceHeaderId": "{{ $variables.oj_table_1084591017_1SelectedId }}"
+          }
+        }
+      ]
+    },
+    "ojButtonOjAction2": {
+      "chains": [
+        {
+          "chainId": "navigateToEditInvoiceHeaderChain",
+          "parameters": {
+            "invoiceHeaderId": "{{ $variables.oj_table_1084591017_1SelectedId }}"
+          }
+        }
+      ]
+    },
+    "ojButton10845910171OjAction": {
+      "chains": [
+        {
+          "chainId": "GoButtonActionChain",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-menu-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      }
+    }
+  }
+}

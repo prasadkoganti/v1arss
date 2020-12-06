@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "id": 4,
+            "creationDate": "2020-11-18T07:44:40+00:00",
+            "lastUpdateDate": "2020-11-18T07:44:40.463+00:00",
+            "createdBy": "oicuser28",
+            "lastUpdatedBy": "oicuser28",
+            "memoLine": 1,
+            "description": "Default Memo Line Desc",
+            "quantity": 1E+2,
+            "unitPrice": 1E+2,
+            "taxCode": 1,
+            "amount": 1.1E+4,
+            "invoiceReference": null,
+            "lineNumber": null,
+            "invoiceHeaderId": 1,
+            "taxRate": 1E+1,
+            "distributionTotal": 1.1E+4
+        }
+    ]
+}

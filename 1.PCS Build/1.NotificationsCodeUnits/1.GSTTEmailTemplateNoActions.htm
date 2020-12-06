@@ -1,0 +1,106 @@
+<body style="margin: 0px; background-color: rgb(226, 229, 232);">
+<br/><br/>
+<table width="650" align="center" cellpadding="10" cellspacing="0"
+       style="font-size:12px;font-family:Arial,Helvetica,sans-serif;background-color:#ffffff;color:#333333;line-height:18px">
+    <tbody>
+    <tr>
+        <td colspan="4" bgcolor="#F5F5F5">
+            <img src="{{logo}}" width="136"  alt="ORACLE"
+                height="17" />
+            <span style="color:#454545;font-size:15px;font-weight:bold">Cloud</span>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="3">Hello {{assignee}},</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="3">
+            The attached Income Request requires your Approval. Please review the details in the attachment and then click View Online to take action.
+        </td>
+    </tr>
+	<tr>
+        <td></td>
+        <td colspan="3">
+            If rejecting a transaction optionally enter any Comments you wish to make the requestor aware of. 
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="3">
+		<b>Take Action: </b> <a href="{{url}}" style="color:blue;font-weight:bold"> View Online</a>
+        </td>
+    </tr>
+<tr>
+<img src="{{InvoiceForm}}"/>
+      </tr>
+    <tr>
+        <td width="1"></td>
+        <td colspan="2" height="10" style="background-color:#e6eaee">
+            <span style="font-size:14px"><b>Task Information </b></span>
+        </td>
+        <td width="1"></td>
+    </tr>
+
+    <tr>
+        <td width="1"></td>
+        <td colspan="2" valign="top">
+            <table width="100%" align="center" cellpadding="5" cellspacing="0"
+                   style="font-size:12px;font-family:Arial,Helvetica,sans-serif;background-color:#ffffff;color:#333333;line-height:14px">
+                <tbody>
+                <tr>
+                    <td width="200" valign="top"><b>From:</b></td>
+                    <td valign="top">{{fromUser}}</td>
+                </tr>
+                <tr>
+                    <td width="200" valign="top"><b>Summary:</b></td>
+                    <td  valign="top">{{shortSummary}}</td>
+                </tr>
+                <tr>
+                    <td width="200" valign="top"><b>Priority:</b></td>
+                    <td  valign="top">{{priority}}</td>
+                </tr>
+                <tr>
+                    <td width="200" valign="top"><b>Created On:</b></td>
+                    <td valign="top">{{createdDate}}</td>
+                </tr>
+                <tr>
+                    <td width="200" valign="top"><b>{{#dueDate}} Due Date: {{/dueDate}}</b></td>
+                    <td valign="top"><span style="color:red">{{dueDate}}</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+<br />
+
+<table width="650" align="center" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+        <td width="300" height="29">
+            <span style="font-size:11px;color:#484a4b">Copyright {{currentYear}}.  Oracle and/or its affiliates. All rights reserved. </span>
+        </td>
+        <td width="350" align="right">
+            <span style="font-size:11px">
+                <a style="color:#000" href="http://www.oracle.com/us/corporate/index.html" target="_blank">About Oracle</a>
+                <span style="margin-left: 2px;margin-right:2px">|</span>
+                <a style="color:#000" href="http://www.oracle.com/us/legal/terms/index.html" target="_blank">Legal Notices and Terms of Use</a>
+               <span style="margin-left: 2px;margin-right:2px">|</span>
+                <a style="color:#000" href="http://www.oracle.com/us/legal/privacy/overview/index.html" target="_blank">Privacy Statement</a>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top">
+            <span style="font-size:11px;color:#484a4b;line-height:20px">This is a system generated message. Do not reply to this message. You are receiving this email as a result of your current relationship with Oracle Cloud. General marketing opt-out preferences have been over-ridden to ensure that you receive this email.</span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>

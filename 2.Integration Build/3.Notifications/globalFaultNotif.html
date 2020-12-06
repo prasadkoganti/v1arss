@@ -1,0 +1,74 @@
+dvm:lookupValue('oramds:/apps/ICS/DVM/XXGSTT_AR_Invoice_Lookup.dvm','PropertyName','noreplyFromEmail','PropertyValue','')
+
+dvm:lookupValue('oramds:/apps/ICS/DVM/XXGSTT_AR_Invoice_Lookup.dvm','PropertyName','EmailTo','PropertyValue','')
+
+concat( "XXGSTT AR Invoice Import Integration Run Faulted. Invoice Reference - ", /nssrcmpr:execute/nssrcdfl:request-wrapper/nssrcdfl:InvoiceReference)
+
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+   font-size:14px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+p{
+  font-family: arial, sans-serif;font-size:12px;
+}
+
+span{
+  font-family: arial, sans-serif;font-size:12px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+   font-size:12px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+</style>
+</head>
+<body>
+
+<span>Dear User,</span>
+<br>
+<br>
+<span><b>Invoice Reference:</b> {invoiceRef} Import has ended in error.</span>
+<br>
+<br>
+<span>Please find error details below:</span>
+<br><br>
+
+<span><b>Instance Id:</b> {instanceID}<br><br></span>
+<br>
+<br>
+<span><b>Error Details:</b></span>
+<br>
+<br>
+<table>
+  <tr>
+    <td>Error code</td>
+    <td>{errorcode}</td>
+  </tr>
+    <tr>
+    <td>Error reason</td>
+    <td>{errorreason}</td>
+  </tr>
+    <tr>
+    <td>Error Message</td>
+    <td>{errormessage}</td>
+  </tr>
+</table>
+<br>
+
+<br><br>
+<span>P.S. This is an auto-generated notification from Oracle Integration Cloud Service Global Fault Handler. Do not reply to this email.</span>
+</body>
+</html>

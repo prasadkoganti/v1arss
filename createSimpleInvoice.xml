@@ -1,0 +1,33 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/apps/financials/receivables/transactions/invoices/invoiceService/types/" xmlns:inv="http://xmlns.oracle.com/apps/financials/receivables/transactions/invoices/invoiceService/" xmlns:tran="http://xmlns.oracle.com/apps/financials/receivables/transactions/shared/model/flex/TransactionInterfaceLineDff/" xmlns:tran1="http://xmlns.oracle.com/apps/financials/receivables/transactions/shared/model/flex/TransactionLineDff/" xmlns:tran2="http://xmlns.oracle.com/apps/financials/receivables/transactions/shared/model/flex/TransactionLineGdf/" xmlns:tran3="http://xmlns.oracle.com/apps/financials/receivables/transactions/shared/model/flex/TransactionHeaderDff/" xmlns:tran4="http://xmlns.oracle.com/apps/financials/receivables/transactions/shared/model/flex/TransactionHeaderGdf/" xmlns:tran5="http://xmlns.oracle.com/apps/financials/receivables/transactions/shared/model/flex/TransactionInterfaceHeaderDff/" xmlns:tran6="http://xmlns.oracle.com/apps/financials/receivables/transactions/shared/model/flex/TransactionDistributionDff/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:createSimpleInvoice>
+         <typ:invoiceHeaderInformation>
+            <inv:BusinessUnit>US1 Business Unit</inv:BusinessUnit>
+            <inv:TransactionSource>Manual</inv:TransactionSource>
+            <inv:TransactionType>Invoice</inv:TransactionType>
+            <inv:TrxNumber>1234</inv:TrxNumber>
+            <inv:TrxDate>2020-11-03</inv:TrxDate>
+            <inv:GlDate>2020-11-03</inv:GlDate>
+            <inv:BillToCustomerName>Easy Solutions</inv:BillToCustomerName>
+            <inv:BillToAccountNumber/>
+            <inv:BillToLocation>Oakland</inv:BillToLocation>
+            <inv:PaymentTermsName>Net 30</inv:PaymentTermsName>
+            <inv:InvoiceCurrencyCode>USD</inv:InvoiceCurrencyCode>
+            <!--Zero or more repetitions:-->
+            <inv:InvoiceLine>
+               <inv:LineNumber>1</inv:LineNumber>
+               <inv:Description>Line 1</inv:Description>
+               <inv:Quantity>1</inv:Quantity>
+               <inv:UnitSellingPrice currencyCode="USD">100</inv:UnitSellingPrice>
+            </inv:InvoiceLine>
+            <inv:InvoiceLine>
+               <inv:LineNumber>2</inv:LineNumber>
+               <inv:Description>Line 2</inv:Description>
+               <inv:Quantity>2</inv:Quantity>
+               <inv:UnitSellingPrice currencyCode="USD">200</inv:UnitSellingPrice>
+            </inv:InvoiceLine>
+         </typ:invoiceHeaderInformation>
+      </typ:createSimpleInvoice>
+   </soapenv:Body>
+</soapenv:Envelope>

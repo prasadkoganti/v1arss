@@ -1,0 +1,127 @@
+{
+    "id": 5,
+    "creationDate": "2020-11-08T12:23:57+00:00",
+    "lastUpdateDate": "2020-11-14T15:41:10+00:00",
+    "createdBy": "techtutorsti@gmail.com",
+    "lastUpdatedBy": "techtutorsti@gmail.com",
+    "transactionDate": "2020-11-08",
+    "billToLocation": 1,
+    "profileClass": "Easy Profile Class",
+    "addressLine1": "Easy Main Bill To Loc Adr Line 1",
+    "addressLine2": "Easy Main Bill To Loc Adr Line 2",
+    "city": "London",
+    "postalCode": "EC4V 4BQ",
+    "creditReason": 1,
+    "invoicingRule": 1,
+    "currency": 2,
+    "salesPersonName": 1,
+    "reconciliationReference": "INV1 Rec Ref1",
+    "insuranceCompany": "Easy IC",
+    "policyNumber": "Easy PN",
+    "patientDateOfBirth": "1988-11-07",
+    "printOption": 1,
+    "admissionDate": "2020-11-08",
+    "dischargeDate": "2020-11-07",
+    "poNumber": "123",
+    "otherRechargeReason": "Rec Reason",
+    "requestorName": "Requestor Name",
+    "revenueDeptApprover": "Revenue Dept Approver",
+    "specialInstructions": "Special Instructions",
+    "notesToBeIncludedOnTrx": "Notes on Transaction",
+    "commentsToApprover": "Comments to Approver3",
+    "invoiceReference": "INV1",
+    "status": "SUBMITTED",
+    "customerName": null,
+    "transactionType": null,
+    "transactionTypeRef": 1,
+    "customerNameRef": 1,
+    "currentApprover": "Current Approver",
+    "insuranceCustomerNumber": "Easy IN",
+    "businessUnit": 1,
+    "incomeSysTeamApprover": null,
+    "financeDirectorApprover": null,
+    "transactionTotal": 330.00000000000006,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5",
+            "name": "InvoiceHeader",
+            "kind": "item",
+            "properties": {
+                "changeIndicator": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A657870000000017704000000017372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C78"
+            }
+        },
+        {
+            "rel": "canonical",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5",
+            "name": "InvoiceHeader",
+            "kind": "item"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/billToLocationObject",
+            "name": "billToLocationObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/businessUnitObject",
+            "name": "businessUnitObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/creditReasonObject",
+            "name": "creditReasonObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/currencyObject",
+            "name": "currencyObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/customerNameRefObject",
+            "name": "customerNameRefObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoiceDistributionColl",
+            "name": "invoiceDistributionColl",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoiceLineCollection2",
+            "name": "invoiceLineCollection2",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoicingRuleObject",
+            "name": "invoicingRuleObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/printOptionObject",
+            "name": "printOptionObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/salesPersonNameObject",
+            "name": "salesPersonNameObject",
+            "kind": "collection"
+        },
+        {
+            "rel": "child",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/transactionTypeRefObjec",
+            "name": "transactionTypeRefObjec",
+            "kind": "collection"
+        }
+    ]
+}

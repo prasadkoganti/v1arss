@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "id": 29,
+            "creationDate": "2020-11-14T07:47:32+00:00",
+            "lastUpdateDate": "2020-11-14T07:48:53+00:00",
+            "createdBy": "techtutorsti@gmail.com",
+            "lastUpdatedBy": "techtutorsti@gmail.com",
+            "organizationRef": 1,
+            "costCentreRef": 1,
+            "subjectiveRef": 1,
+            "wgaRef": 1,
+            "intercompanyRef": 1,
+            "analysisRef": 1,
+            "spare1Ref": 1,
+            "spare2Ref": 1,
+            "invoiceReference": null,
+            "invoiceHeaderId": 5,
+            "invoiceLineId": 21,
+            "distributionLineNumber": null,
+            "invoiceLineNumber": null,
+            "allocationPercentage": 1E+2,
+            "allocationAmount": 110.00000000000001,
+            "lineAmount": 110.00000000000001,
+            "invoiceHeaderIdObject_id": 5,
+            "invoiceLineIdObject_id": 21,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoiceDistributionColl/29",
+                    "name": "invoiceDistributionColl",
+                    "kind": "item",
+                    "properties": {
+                        "changeIndicator": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A657870000000017704000000017372001B6F7261636C652E6A626F2E646F6D61696E2E4E756C6C56616C75655899C1C58DAABEEB02000149000A6D53514C54797065496478700000000C78"
+                    }
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoiceDistributionColl/29",
+                    "name": "invoiceDistributionColl",
+                    "kind": "item"
+                },
+                {
+                    "rel": "parent",
+                    "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5",
+                    "name": "InvoiceHeader",
+                    "kind": "item"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoiceDistributionColl/29/lov/invoiceHeaderId_InvoiceHeader_Accessor",
+                    "name": "invoiceHeaderId_InvoiceHeader_Accessor",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoiceDistributionColl/29/lov/invoiceLineId_InvoiceLine_Accessor",
+                    "name": "invoiceLineId_InvoiceLine_Accessor",
+                    "kind": "collection"
+                }
+            ]
+        }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://gsttoicdev-frv08jeksq3g-ld.integration.ocp.oraclecloud.com:443/ic/builder/design/GSTT_AR_Self_Service_Invoice_App/1.0/resources/data/InvoiceHeader/5/child/invoiceDistributionColl",
+            "name": "invoiceDistributionColl",
+            "kind": "collection"
+        }
+    ]
+}

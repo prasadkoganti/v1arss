@@ -1,0 +1,6 @@
+db202010102051_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-mumbai-1.oraclecloud.com))(connect_data=(service_name=hactnzvk81ltptz_db202010102051_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.ap-mumbai-1.oraclecloud.com,OU=Oracle ADB INDIA,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))
+
+db202010102051_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-mumbai-1.oraclecloud.com))(connect_data=(service_name=hactnzvk81ltptz_db202010102051_low.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.ap-mumbai-1.oraclecloud.com,OU=Oracle ADB INDIA,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))
+
+db202010102051_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-mumbai-1.oraclecloud.com))(connect_data=(service_name=hactnzvk81ltptz_db202010102051_medium.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.ap-mumbai-1.oraclecloud.com,OU=Oracle ADB INDIA,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))
+

@@ -1,0 +1,52 @@
+<ns01:onEvent xmlns:ns01="http://xmlns.oracle.com/cloud/adapter/erp/receiveARInvoiceCallbackFromERP_REQUEST/types">
+	<ns0:ErpImportBulkDataEvent xmlns:ns0="http://xmlns.oracle.com/apps/financials/commonModules/shared">
+		<ns0:SUMMARYSTATUS>ERROR</ns0:SUMMARYSTATUS>
+		<ns0:DOCUMENTID>43218</ns0:DOCUMENTID>
+		<ns0:JOBS>
+			<ns0:CHILD>
+				<ns0:JOBPATH>/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader</ns0:JOBPATH>
+				<ns0:REQUESTID>55614</ns0:REQUESTID>
+				<ns0:JOBNAME>Load File to Interface</ns0:JOBNAME>
+				<ns0:STATUS>SUCCEEDED</ns0:STATUS>
+			</ns0:CHILD>
+			<ns0:CHILD>
+				<ns0:JOBPATH>/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader</ns0:JOBPATH>
+				<ns0:REQUESTID>55615</ns0:REQUESTID>
+				<ns0:JOBNAME>Load File to Interface</ns0:JOBNAME>
+				<ns0:STATUS>SUCCEEDED</ns0:STATUS>
+			</ns0:CHILD>
+			<ns0:CHILD>
+				<ns0:JOBPATH>/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader</ns0:JOBPATH>
+				<ns0:REQUESTID>55613</ns0:REQUESTID>
+				<ns0:JOBNAME>Transfer File</ns0:JOBNAME>
+				<ns0:STATUS>SUCCEEDED</ns0:STATUS>
+			</ns0:CHILD>
+			<ns0:CHILD>
+				<ns0:JOBPATH>/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader</ns0:JOBPATH>
+				<ns0:REQUESTID>55616</ns0:REQUESTID>
+				<ns0:JOBNAME>Load File to Interface</ns0:JOBNAME>
+				<ns0:STATUS>SUCCEEDED</ns0:STATUS>
+			</ns0:CHILD>
+			<ns0:JOBPATH>/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader</ns0:JOBPATH>
+			<ns0:REQUESTID>55612</ns0:REQUESTID>
+			<ns0:JOBNAME>Load Interface File for Import</ns0:JOBNAME>
+			<ns0:DOCUMENTNAME>ArAutoinvoiceImport_2800367.zip</ns0:DOCUMENTNAME>
+			<ns0:STATUS>SUCCEEDED</ns0:STATUS>
+		</ns0:JOBS>
+		<ns0:JOBS>
+			<ns0:JOBPATH>/oracle/apps/ess/financials/receivables/transactions/autoInvoices</ns0:JOBPATH>
+			<ns0:REQUESTID>55617</ns0:REQUESTID>
+			<ns0:JOBNAME>Import AutoInvoice</ns0:JOBNAME>
+			<ns0:STATUS>ERROR</ns0:STATUS>
+		</ns0:JOBS>
+		<ns0:JOBS>
+			<ns0:JOBPATH>/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader</ns0:JOBPATH>
+			<ns0:REQUESTID>55618</ns0:REQUESTID>
+			<ns0:JOBNAME>Upload Interface Error and Job Output File to Universal Content Management</ns0:JOBNAME>
+			<ns0:STATUS>SUCCEEDED</ns0:STATUS>
+		</ns0:JOBS>
+		<ICSFile xmlns="http://xmlns.oracle.com/cloud/ics/file/v1/types">
+			<FileReference>file:/51d0d556-cf5d-4afe-a4fa-7eb9fc8244d1@_@FWuOVOF4UhKKvvPWIeKnwpHZg3AqNgjOdJL7GmRMald1FkKH0AU2ieloHd8JJgbKH0FXB5rI7ab8zPrQYJuAkg==</FileReference>
+		</ICSFile>
+	</ns0:ErpImportBulkDataEvent>
+</ns01:onEvent>

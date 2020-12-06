@@ -1,0 +1,1 @@
+select * from all_tables where owner = 'VB_VB_JQPCEV22ZDO';

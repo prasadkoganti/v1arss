@@ -1,0 +1,2 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,name,profileClass,insuranceCompany,policyNumber,patientDateOfBirth,insuranceNumber,accountNumber,custAccountId
+1,2020-11-07T07:01:57,2020-11-07T07:01:57.007,oicuser28,oicuser28,Easy Solutions,DefaultProfile,01,12,2020-11-07,01,1234,1234.0

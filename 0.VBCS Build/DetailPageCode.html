@@ -1,0 +1,119 @@
+<div class="oj-flex">
+  <h1 class="oj-flex-item oj-sm-12 oj-md-12">View Request</h1>
+</div>
+<br>
+<br>
+<div class="oj-flex">
+  
+  <h2 class="oj-flex-item oj-sm-12 oj-md-2">Transaction</h2>
+
+</div>
+<div class="oj-flex">
+  <oj-form-layout label-edge="start" class="oj-flex-item oj-sm-12 oj-md-10" max-columns="2">
+    <oj-input-text value="[[ $page.variables.invoiceHeader.businessUnitObject.items[0] ? $page.variables.invoiceHeader.businessUnitObject.items[0].businessUnitName : undefined ]]" readonly="true" label-hint="Business Unit Name"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.invoiceReference ]]" readonly="true" label-hint="Invoice Reference"></oj-input-text>
+    <oj-input-date value="[[ $page.variables.invoiceHeader.transactionDate ]]" readonly="true" label-hint="Transaction Date"></oj-input-date>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.status ]]" readonly="true" label-hint="Status"></oj-input-text>
+  </oj-form-layout>
+</div>
+<br>
+<br>
+<div class="oj-flex">
+  
+  <h2 class="oj-flex-item oj-sm-12 oj-md-6">Customer Details</h2>
+  
+  <div class="oj-flex-item oj-sm-12 oj-md-1"></div>
+  
+  <h2 class="oj-flex-item oj-sm-12 oj-md-5">Bill To Address</h2>
+
+</div>
+<div class="oj-flex">
+  <oj-form-layout label-edge="start" class="oj-flex-item oj-sm-12 oj-md-5">
+    <oj-input-text value="[[ $page.variables.invoiceHeader.customerName ]]" readonly="true" label-hint="Customer Name"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.profileClass ]]" readonly="true" label-hint="Profile Class"></oj-input-text>
+  </oj-form-layout>
+  <oj-form-layout label-edge="start" class="oj-flex-item oj-sm-12 oj-md-5">
+    <oj-input-text value="[[ $page.variables.invoiceHeader.billToLocationObject.items[0] ? $page.variables.invoiceHeader.billToLocationObject.items[0].billToLocation : undefined ]]" readonly="true" label-hint="Bill To Location"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.addressLine1 ]]" readonly="true" label-hint="Address Line 1"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.addressLine2 ]]" readonly="true" label-hint="Address Line 2"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.city ]]" readonly="true" label-hint="City"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.postalCode ]]" readonly="true" label-hint="Postal Code"></oj-input-text>
+  </oj-form-layout>
+</div>
+<br>
+<div class="oj-flex">
+  
+  <h2 class="oj-flex-item oj-sm-12 oj-md-4">Transaction Details</h2>
+
+</div>
+<div class="oj-flex">
+  <oj-form-layout label-edge="start" class="oj-flex-item oj-sm-12 oj-md-12" max-columns="2">
+    <oj-input-text value="[[ $page.variables.invoiceHeader.transactionType ]]" readonly="true" label-hint="Transaction Type"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.invoicingRuleObject.items[0] ? $page.variables.invoiceHeader.invoicingRuleObject.items[0].name : undefined ]]" readonly="true" label-hint="Invoicing Rule"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.salesPerson ]]" readonly="true" label-hint="Sales Person Name"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.creditReasonObject.items[0] ? $page.variables.invoiceHeader.creditReasonObject.items[0].name : undefined ]]" readonly="true" label-hint="Credit Reason"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.currencyObject.items[0] ? $page.variables.invoiceHeader.currencyObject.items[0].code : undefined ]]" readonly="true" label-hint="Currency"></oj-input-text>
+  </oj-form-layout>
+</div>
+<br>
+<br>
+<div class="oj-flex">
+  
+  <h2 class="oj-flex-item oj-sm-12 oj-md-4">Transaction Information</h2>
+  
+  <h2 class="oj-flex-item oj-sm-12 oj-md-4"></h2>
+
+</div>
+<div class="oj-flex">
+  <oj-form-layout label-edge="start" class="oj-flex-item oj-sm-12 oj-md-6">
+    <oj-input-text value="[[ $page.variables.invoiceHeader.reconciliationReference ]]" readonly="true" label-hint="Reconciliation Reference"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.insuranceCompany ]]" readonly="true" label-hint="Insurance Company"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.policyNumber ]]" readonly="true" label-hint="Policy Number"></oj-input-text>
+    <oj-input-date value="[[ $page.variables.invoiceHeader.patientDateOfBirth ]]" readonly="true" label-hint="Patient Date of Birth"></oj-input-date>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.insuranceCustomerNumber ]]" readonly="true" label-hint="Insurance Customer Number"></oj-input-text>
+  </oj-form-layout>
+  <oj-form-layout label-edge="start" class="oj-flex-item oj-sm-12 oj-md-6">
+    <oj-input-text value="[[ $page.variables.invoiceHeader.printOptionObject.items[0] ? $page.variables.invoiceHeader.printOptionObject.items[0].value : undefined ]]" readonly="true" label-hint="Print Option"></oj-input-text>
+    <oj-input-date value="[[ $page.variables.invoiceHeader.admissionDate ]]" readonly="true" label-hint="Admission Date"></oj-input-date>
+    <oj-input-date value="[[ $page.variables.invoiceHeader.dischargeDate ]]" readonly="true" label-hint="Discharge Date"></oj-input-date>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.poNumber ]]" readonly="true" label-hint="PO Number"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.otherRechargeReason ]]" readonly="true" label-hint="Other Recharge Reason"></oj-input-text>
+  </oj-form-layout>
+</div>
+<br>
+<div class="oj-flex">
+  
+  <h2 class="oj-flex-item oj-sm-12 oj-md-4">Contacts and Comments</h2>
+
+</div>
+<br>
+<div class="oj-flex">
+  <oj-form-layout label-edge="start" class="oj-flex-item oj-sm-12 oj-md-10" max-columns="2">
+    <oj-input-text value="[[ $page.variables.invoiceHeader.incomeSysTeamApprover ]]" readonly="true" label-hint="Income Sys Team Approver"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.revenueDeptApprover ]]" readonly="true" label-hint="Revenue Dept Approver"></oj-input-text>
+    <oj-input-text value="[[ $page.variables.invoiceHeader.currentApprover ]]" readonly="true" label-hint="Current Approver"></oj-input-text>
+    <oj-input-number value="[[ $page.variables.invoiceHeader.transactionTotal ]]" readonly="true" label-hint="Transaction Total"></oj-input-number>
+    <oj-text-area label-hint="Special Instructions" value="[[ $page.variables.invoiceHeader.specialInstructions ]]" readonly="true"></oj-text-area>
+    <oj-text-area label-hint="Comments to Approver" value="[[ $page.variables.invoiceHeader.commentsToApprover ]]" readonly="true"></oj-text-area>
+    <oj-text-area label-hint="Notes on Transaction" value="[[ $page.variables.invoiceHeader.notesToBeIncludedOnTrx ]]" readonly="true"></oj-text-area>
+  </oj-form-layout>
+</div>
+<br>
+<div class="oj-flex">
+  
+  <h1 class="oj-flex-item oj-sm-12 oj-md-12">Invoice Lines</h1>
+
+</div>
+<div class="oj-flex">
+  <hr class="oj-flex-item oj-sm-12 oj-md-12">
+</div>
+<div class="oj-flex">
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12" data="[[$page.variables.getInvoiceLineDistListSDP]]" columns='[  {    "headerText": "Inv Line Id",    "field": "id"  },  {    "headerText": "Description",    "field": "description"  },  {    "headerText": "Quantity",    "field": "quantity"  },  {    "headerText": "Unit Price",    "field": "unitprice"  },  {    "headerText": "Tax Code",    "field": "taxcode"  },  {    "headerText": "Distribution Amount",    "field": "distributionamount"  },  {    "headerText": "Organization",    "field": "organization"  },  {    "headerText": "Cost Centre",    "field": "costcentre"  },  {    "headerText": "Subjective",    "field": "subjective"  },  {    "headerText": "WGA",    "field": "wga"  },  {    "headerText": "Intercompany",    "field": "intercompany"  },  {    "headerText": "Analysis",    "field": "analysis"  },  {    "headerText": "Spare1",    "field": "spare1"  },  {    "headerText": "Spare2",    "field": "spare2"  }]'></oj-table>
+</div>
+<br>
+<br>
+<div class="oj-flex">
+  <oj-toolbar chroming="solid" class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-button on-oj-action="[[$page.listeners.backButtonClicked]]">Back</oj-button>
+  </oj-toolbar>
+</div>
